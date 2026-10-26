@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # The Supabase URL and anon key are public by design: Vite inlines VITE_* vars
+  # into the client bundle. Data access is protected by Supabase row-level security.
+  SECRETS_SCAN_OMIT_KEYS = "VITE_SUPABASE_URL,VITE_SUPABASE_ANON_KEY"
